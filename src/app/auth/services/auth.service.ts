@@ -48,9 +48,9 @@ export class AuthService {
     try {
       const payloadBase64 = token.split('.')[1];
       const payload = JSON.parse(atob(payloadBase64));
-      return payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || 'cliente';
+      return payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || 'client';
     } catch {
-      return 'cliente'; // fallback por defecto
+      return 'cliente'; 
     }
   }
 }
